@@ -1262,6 +1262,8 @@ public void OnClientDisconnect(int client)
 			PrintCenterTextAll("%t", "warden_disconnected_nc", client);
 		}
 
+		HandCuffs_OnClientDisconnect(client); // this is prioritised to fix a crash with the StripZeus function
+
 		Forward_OnWardenRemoved(client);
 		Forward_OnWardenDisconnected(client);
 
@@ -1285,7 +1287,6 @@ public void OnClientDisconnect(int client)
 
 	Deputy_OnClientDisconnect(client);
 	Painter_OnClientDisconnect(client);
-	HandCuffs_OnClientDisconnect(client);
 	Freedays_OnClientDisconnect(client);
 }
 
